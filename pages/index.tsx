@@ -1,14 +1,12 @@
 import Link from 'next/link'
+import HeaderNav from '../components/HeaderNav'
+import 'antd/dist/antd.css'
+import { Row, Col } from 'antd'
 export default function Home() {
   return (
     <div className="container">
-      <a href="https://nextjs.org">Next.js!</a>
-      <Link href='/posts/first'>
-        <a href="">link to first</a>
-      </Link>
-      <style jsx>{`
-      `}</style>
-
+      <HeaderNav />
+      
       <style jsx global>{`
         html,
         body {
@@ -18,7 +16,6 @@ export default function Home() {
             Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
             sans-serif;
         }
-
         * {
           box-sizing: border-box;
         }
