@@ -14,6 +14,11 @@ const menu = (
                 <Button className='select-item'>wiki</Button>
             </Link>
         </Menu.Item>
+        <Menu.Item key="dynamic">
+            <Link href='/dynamic'>
+                <Button className='select-item'>动态</Button>
+            </Link>
+        </Menu.Item>
         <Menu.Item key="graduateMessage">
             <Link href='/graduate/index'>
                 <Button className='select-item'>毕业生</Button>
