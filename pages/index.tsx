@@ -1,7 +1,7 @@
-import Link from 'next/link'
-import HeaderNav from '../components/HeaderNav'
-import 'antd/dist/antd.css'
-import { Row, Col } from 'antd'
+import Link from "next/link";
+import HeaderNav from "../components/HeaderNav";
+import "antd/dist/antd.css";
+import { Row, Col } from "antd";
 export default function Home() {
   return (
     <div className="container">
@@ -20,5 +20,5 @@ export default function Home() {
         }
       `}</style>
     </div>
-  )
+  );
 }

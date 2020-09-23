@@ -1,7 +1,5 @@
-import HeaderNav from '../../components/HeaderNav'
+import HeaderNav from "../../components/HeaderNav";
 
 export default function DynamicPageIndex() {
-    return (
-        <HeaderNav />
-    )
+  return <HeaderNav />;
 }
