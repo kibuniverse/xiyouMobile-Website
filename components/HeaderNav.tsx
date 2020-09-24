@@ -2,6 +2,8 @@ import { Row, Col, Menu, Dropdown, Button } from "antd";
 import { MenuOutlined } from "@ant-design/icons";
 import Link from "next/link";
 import axios from "axios";
+import { Avatar } from 'antd'
+
 const menu = (
   <Menu>
     <Menu.Item key="index">
@@ -32,22 +34,56 @@ const menu = (
   </Menu>
 );
 export default function HeaderNav() {
-  const handleClick = () => {
-    axios.get("api/api/wiki/list/all/2").then((resp) => console.log(resp));
-  };
   return (
-    <Row justify="center">
+    <Row justify="center" align='middle' className='header' style={{ height: '2rem', backgroundColor: 'rgb(222 195 195)' }}>
       {/* PC端 */}
-      <Col xs={0} sm={0} md={20} lg={20} xl={20} xxl={20}>
-        PC端
-        <button onClick={handleClick}>test</button>
-      </Col>
+      <Col xs={0} sm={0} md={18} lg={18} xl={18} xxl={18} style={{ height: '2rem', display: 'flex', justifyContent: 'flex-start', alignItems: 'center' }}>
+        <Avatar src="//mobile.xupt.edu.cn/res/static/wiki_default.jpg" />
+        <ul className='Title-navs'>
+          <li>
+            <Link href='/'>首页</Link>
+          </li>
+          <li>
+            <Link href='/wiki'>wiki</Link>
+          </li>
+          <li>
+            <Link href='/dynamic'>动态</Link>
+          </li>
+          <li>
+            <Link href='/graduate'>毕业生</Link>
+          </li>
+          <li>
+            <Link href='/member'>成员风采 </Link>
+          </li >
+          <li>
+            <Link href='/abutUs'>关于我们</Link>
+          </li >
+        </ul >
+
+      </Col >
       {/* 移动端 */}
-      <Col xs={20} sm={20} md={0} lg={0} xl={0} xxl={0} flex="center">
+      < Col xs={20} sm={20} md={0} lg={0} xl={0} xxl={0} flex="center" >
         <Dropdown overlay={menu} trigger={["click"]}>
           <MenuOutlined />
         </Dropdown>
-      </Col>
-    </Row>
+      </Col >
+      <style jsx>{`
+        .header {
+          height: 20px;
+        }
+        ul{
+          list-style: none;
+          margin: 0;
+          padding: 0;
+        }
+        .Title-navs li{
+          margin-left: 20px;
+          float: left;
+        }
+        .Title-navs li:hover {
+          cursor: pointer
+        }
+      `}</style>
+    </Row >
   );
 }
