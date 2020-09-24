@@ -1,7 +1,6 @@
 import { Row, Col, Menu, Dropdown, Button } from "antd";
 import { MenuOutlined } from "@ant-design/icons";
 import Link from "next/link";
-import axios from "axios";
 import { Avatar } from 'antd'
 
 const menu = (
@@ -35,9 +34,9 @@ const menu = (
 );
 export default function HeaderNav() {
   return (
-    <Row justify="center" align='middle' className='header' style={{ height: '2rem', backgroundColor: 'rgb(222 195 195)' }}>
+    <Row justify="center" align='middle' className='header' style={{ height: '2.5rem', backgroundColor: '#000000', color: 'white'}}>
       {/* PC端 */}
-      <Col xs={0} sm={0} md={18} lg={18} xl={18} xxl={18} style={{ height: '2rem', display: 'flex', justifyContent: 'flex-start', alignItems: 'center' }}>
+      <Col xs={0} sm={0} md={18} lg={18} xl={18} xxl={18} style={{ height: '2.5rem', display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}>
         <Avatar src="//mobile.xupt.edu.cn/res/static/wiki_default.jpg" />
         <ul className='Title-navs'>
           <li>
@@ -53,13 +52,13 @@ export default function HeaderNav() {
             <Link href='/graduate'>毕业生</Link>
           </li>
           <li>
-            <Link href='/member'>成员风采 </Link>
+            <Link href='/member'>成员风采</Link>
           </li >
           <li>
-            <Link href='/abutUs'>关于我们</Link>
+            <Link href='/aboutus'>关于我们</Link>
           </li >
         </ul >
-
+        <Button type='link' href='https://my.xiyoumobile.com/#/' style={{color: '#fff'}}>登录</Button>
       </Col >
       {/* 移动端 */}
       < Col xs={20} sm={20} md={0} lg={0} xl={0} xxl={0} flex="center" >
@@ -71,17 +70,17 @@ export default function HeaderNav() {
         .header {
           height: 20px;
         }
-        ul{
-          list-style: none;
-          margin: 0;
-          padding: 0;
-        }
+        
         .Title-navs li{
           margin-left: 20px;
           float: left;
+          color: '#000';
         }
         .Title-navs li:hover {
-          cursor: pointer
+          cursor: pointer;
+        }
+        .ant-btn-link:hover{
+          color: '#fff';
         }
       `}</style>
     </Row >
