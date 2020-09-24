@@ -34,34 +34,40 @@ const menu = (
 );
 export default function HeaderNav() {
   return (
-    <Row justify="center" align='middle' className='header' style={{ height: '2.5rem', backgroundColor: '#000000', color: 'white'}}>
+    <Row justify="center" align='middle' className='header'>
       {/* PC端 */}
-      <Col xs={0} sm={0} md={18} lg={18} xl={18} xxl={18} style={{ height: '2.5rem', display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}>
-        <Avatar src="//mobile.xupt.edu.cn/res/static/wiki_default.jpg" />
-        <ul className='Title-navs'>
-          <li>
-            <Link href='/'>首页</Link>
-          </li>
-          <li>
-            <Link href='/wiki'>wiki</Link>
-          </li>
-          <li>
-            <Link href='/dynamic'>动态</Link>
-          </li>
-          <li>
-            <Link href='/graduate'>毕业生</Link>
-          </li>
-          <li>
-            <Link href='/member'>成员风采</Link>
-          </li >
-          <li>
-            <Link href='/aboutus'>关于我们</Link>
-          </li >
-        </ul >
-        <Button type='link' href='https://my.xiyoumobile.com/#/' style={{color: '#fff'}}>登录</Button>
+      <Col xs={0} sm={0} md={24} lg={24} xl={24} xxl={24}>
+        <div style={{ width: '100%', backgroundColor: '#000000' }}>
+          <div style={{ width: '70%', margin: 'auto', height: '2.5rem', display: 'flex', backgroundColor: '#000000', justifyContent: 'space-around', alignItems: 'center' }}>
+            <Avatar src="//mobile.xupt.edu.cn/res/static/wiki_default.jpg" />
+            <ul className='Title-navs'>
+              <li>
+                <Link href='/'>首页</Link>
+              </li>
+              <li>
+                <Link href='/wiki'>wiki</Link>
+              </li>
+              <li>
+                <Link href='/dynamic'>动态</Link>
+              </li>
+              <li>
+                <Link href='/graduate'>毕业生</Link>
+              </li>
+              <li>
+                <Link href='/member'>成员风采</Link>
+              </li >
+              <li>
+                <Link href='/aboutus'>关于我们</Link>
+              </li >
+            </ul >
+            <Button type='link' href='https://my.xiyoumobile.com/#/' style={{ color: '#fff' }}>登录</Button>
+          </div>
+        </div>
+
+
       </Col >
       {/* 移动端 */}
-      < Col xs={20} sm={20} md={0} lg={0} xl={0} xxl={0} flex="center" >
+      <Col xs={20} sm={20} md={0} lg={0} xl={0} xxl={0} flex="center" >
         <Dropdown overlay={menu} trigger={["click"]}>
           <MenuOutlined />
         </Dropdown>
@@ -72,7 +78,7 @@ export default function HeaderNav() {
         }
         
         .Title-navs li{
-          margin-left: 20px;
+          margin-left: 30px;
           float: left;
           color: '#000';
         }
