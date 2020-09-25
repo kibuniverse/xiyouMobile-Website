@@ -37,7 +37,7 @@ export default function HeaderNav() {
     <Row justify="center" align='middle' className='header'>
       {/* PC端 */}
       <Col xs={0} sm={0} md={24} lg={24} xl={24} xxl={24}>
-        <div style={{ width: '100%', backgroundColor: '#000000' }}>
+        <div style={{ width: '100%', backgroundColor: '#000000', }}>
           <div style={{ width: '70%', margin: 'auto', height: '2.5rem', display: 'flex', backgroundColor: '#000000', justifyContent: 'space-around', alignItems: 'center' }}>
             <Avatar src="//mobile.xupt.edu.cn/res/static/wiki_default.jpg" />
             <ul className='Title-navs'>
