@@ -67,10 +67,27 @@ export default function HeaderNav() {
 
       </Col >
       {/* 移动端 */}
-      <Col xs={20} sm={20} md={0} lg={0} xl={0} xxl={0} flex="center" >
-        <Dropdown overlay={menu} trigger={["click"]}>
-          <MenuOutlined />
-        </Dropdown>
+      <Col xs={24} sm={24} md={0} lg={0} xl={0} xxl={0} flex='center' >
+        <div style={{
+          display: "flex",
+          justifyContent: "space-between"
+        }}>
+          <Avatar src="//mobile.xupt.edu.cn/res/static/wiki_default.jpg" />
+          <div style={{
+            textAlign: 'center',
+            margin: 'auto',
+            fontWeight: 600
+          }}>xiyouMobile</div>
+          <div style={{
+            marginRight: '.5rem'
+          }}>
+            <Dropdown overlay={menu} trigger={["click"]}>
+              <MenuOutlined />
+            </Dropdown>
+          </div>
+
+        </div>
+
       </Col >
       <style jsx>{`
         .header {
