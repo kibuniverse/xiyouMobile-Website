@@ -1,10 +1,27 @@
-import requests from '../../public/tools/request'
+
+import axios from 'axios'
+import { useEffect } from 'react'
 import HeaderNav from '../../components/HeaderNav'
-export default function ActivePageIndex() {
-    fetch('https://mobile.xupt.edu.cn/api/wiki/top/-1')
+import { GetStaticProps } from 'next'
+
+export default function ActivePageIndex({ context, res }) {
+    console.log(context)
+    console.log(res)
     return (
         <div>
             <HeaderNav />
         </div>
     )
+}
+
+export const getStaticProps: GetStaticProps = async (context) => {
+    console.log(context)
+    await axios.get('/api/api/activity/detail/181').then(reslove => {
+        
+    })
+    return {
+        props: {
+            context,
+        }
+    }
 }

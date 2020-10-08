@@ -6,9 +6,6 @@ export default function Home() {
   return (
     <div className="container">
       <HeaderNav />
-      <Link href='/activeDetailPage?activeId=183'>
-        <Button >点击跳转</Button>
-      </Link>
     </div>
   )
 }
