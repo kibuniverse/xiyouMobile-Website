@@ -38,7 +38,7 @@ export default function HeaderNav() {
       {/* PC端 */}
       <Col xs={0} sm={0} md={24} lg={24} xl={24} xxl={24}>
         <div style={{ width: '100%', backgroundColor: '#000000', }}>
-          <div style={{ width: '70%', margin: 'auto', height: '2.5rem', display: 'flex', backgroundColor: '#000000', justifyContent: 'space-around', alignItems: 'center' }}>
+          <div style={{ width: '70%', margin: 'auto', height: '2.5rem', display: 'flex', backgroundColor: '#000000', justifyContent: 'space-between', alignItems: 'center' }}>
             <Avatar src="//mobile.xupt.edu.cn/res/static/wiki_default.jpg" />
             <ul className='Title-navs'>
               <li>
@@ -60,7 +60,6 @@ export default function HeaderNav() {
                 <Link href='/aboutus'>关于我们</Link>
               </li >
             </ul >
-            <Button type='link' href='https://my.xiyoumobile.com/#/' style={{ color: '#fff' }}>登录</Button>
           </div>
         </div>
 
@@ -70,16 +69,19 @@ export default function HeaderNav() {
       <Col xs={24} sm={24} md={0} lg={0} xl={0} xxl={0} flex='center' >
         <div style={{
           display: "flex",
-          justifyContent: "space-between"
+          justifyContent: "space-between",
+          marginTop: ".3rem",
+          borderBottom: '1px solid #e4d6d6'
         }}>
           <Avatar src="//mobile.xupt.edu.cn/res/static/wiki_default.jpg" />
-          <div style={{
+          <div style={{ 
             textAlign: 'center',
             margin: 'auto',
             fontWeight: 600
           }}>xiyouMobile</div>
           <div style={{
-            marginRight: '.5rem'
+            marginRight: '0.5rem',
+            paddingTop: '0.25rem'
           }}>
             <Dropdown overlay={menu} trigger={["click"]}>
               <MenuOutlined />
@@ -93,7 +95,12 @@ export default function HeaderNav() {
         .header {
           height: 20px;
         }
-        
+        .Title-navs {
+          width: 80%;
+          display: flex;
+          justify-content: center;
+        }
+
         .Title-navs li{
           margin-left: 30px;
           float: left;
