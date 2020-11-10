@@ -5,7 +5,7 @@ const { createProxyMiddleware } = require("http-proxy-middleware");
 
 const devProxy = {
     "/api": {
-        target: "https://mobile.xupt.edu.cn", // 端口自己配置合适的
+        target: "https://mobile.xupt.edu.cn/", // 端口自己配置合适的
         pathRewrite: {
             "^/api": "/",
         },
