@@ -1,9 +1,13 @@
-
-/**
- * @author yankaizhi
- * @function wiki页面
- * 
+/*
+ * @Author: yankaizhi
+ * @Date: 2020-09-22 21:45:06
+ * @LastEditTime: 2020-12-04 14:57:41
+ * @LastEditors: Please set LastEditors
+ * @Description: wiki页面
+ * @FilePath: \xiyouMobile-Website\pages\wiki\index.tsx
  */
+
+
 import axios from 'axios'
 import WikiCard from '../../components/WikiCard'
 import { WikiDataListItem } from '../../interface/wiki'
@@ -36,7 +40,6 @@ export default function WikiIndex() {
                             </span>
                         } key="all">
                             <WikiList type="all"/>
-                            111
                         </TabPane>
                         <TabPane tab={
                             <span>
@@ -52,7 +55,7 @@ export default function WikiIndex() {
                                 iOS
                             </span>
                         } key='iOS'>
-                            <WikiList type="iOS"/>
+                            <WikiList type="2"/>
                         </TabPane>
                         <TabPane tab={
                             <span>
@@ -60,7 +63,7 @@ export default function WikiIndex() {
                                 web
                             </span>
                         } key="web">
-                            <WikiList type="web"/>
+                            <WikiList type="4"/>
                         </TabPane>
                         <TabPane tab={
                             <span>
@@ -68,7 +71,7 @@ export default function WikiIndex() {
                                 Android
                             </span>
                         } key="Android">
-                            <WikiList type="android"/>
+                            <WikiList type="1"/>
                         </TabPane>
                         <TabPane tab={
                             <span>
@@ -76,7 +79,7 @@ export default function WikiIndex() {
                                 server
                             </span>
                         } key="server">
-                            <WikiList type="server"/>
+                            <WikiList type="5"/>
                         </TabPane>
                     </Tabs>
                 </Col>
@@ -98,14 +101,16 @@ export default function WikiIndex() {
 
 interface IPropsWikiList {
     type: string
+    index?: number
 }
 
 function WikiList(props: IPropsWikiList) {
     const [dataList, setDatalist] = useState<Array<WikiDataListItem>>([] as Array<WikiDataListItem>)
-
     useEffect(() => {
         // 首次渲染获取第一页数据
-        axios.get(`/api/api/wiki/list/${props.type}/1`).then((res: any) => {
+        const getWikiUrl: string = props.type == 'all'? `/api/api/wiki/list/all/1`: `/api/api/wiki/list/type/${props.type}/${props.index ? props.index: 1}`;
+        axios.get(`${getWikiUrl}`).then((res: any) => {
+            console.log(res.data.data)
             setDatalist(res.data.data.dataList)
             console.log(res.data.data.dataList)
         })
