@@ -87,10 +87,19 @@ export default function WikiCard(props: IProps) {
                     font-weight: 300;
                 }
                 .card-wiki-img {
-                    width: 30%;
-                    height: 6rem;
-                    border-radius: 5%;
-                    overflow: hidden;
+                        height: 6rem;
+                        border-radius: 5%;
+                        overflow: hidden;
+                }
+                @media only screen and (min-width: 768px) {
+                    .card-wiki-img {
+                        width: 9rem;
+                    }
+                }
+                @media only screen and (max-width: 768px) {
+                    .card-wiki-img {
+                        width: 30%;
+                    }
                 }
             `}</style>
         </div>
